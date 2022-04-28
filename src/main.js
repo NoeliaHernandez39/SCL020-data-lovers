@@ -1,6 +1,15 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+//import { example } from './data.js';
+import data from './data/rickandmorty/rickandmorty.js';
+import {getGender} from './data.js';
 
-console.log(example, data);
+const results1 = data.results;
+
+getGender(results1);
+
+
+let info = getGender.map(function(){
+    return info;
+})
+document.getElementById("root").innerHTML = info;
+
+
