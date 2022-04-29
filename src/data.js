@@ -1,12 +1,10 @@
 
 export const getGender = (results1) => {
-  console.log(results1);
+  //console.log(results1);
 
-  let allGender = results1.map(
-      elemento => elemento.gender
-  );
+  let allGender = results1.map(elemento => elemento.gender);
+  //console.log(allGender);
 
-  console.log(allGender);
   let everyGender = [];
   for (let i = 0; i < allGender.length; i++){
       if(!everyGender.includes(allGender[i])){
@@ -30,8 +28,7 @@ console.log(genderUnknown);
 const nogender = results1.filter((nogender) => nogender.gender === 'Genderless');
 console.log(nogender);*/
 
-/*const names = results1.map((character) => character.name);
-console.log(names);*/
+
 
 /*const genderMale = gender.filter((genderMale) => genderMale.gender === 'Male');
 console.log(genderMale);
