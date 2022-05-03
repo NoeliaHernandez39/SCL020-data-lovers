@@ -1,0 +1,6 @@
+.firstDiv {
+    color: white;
+    background-color: blue;
+    display: flex;
+    margin: 10px;
+}

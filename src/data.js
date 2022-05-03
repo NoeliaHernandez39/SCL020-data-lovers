@@ -1,17 +1,20 @@
 
-export const getGender = (results1) => {
-  //console.log(results1);
+export const selectedOptions = (myData) => {
 
-  let allGender = results1.map(elemento => elemento.gender);
-  //console.log(allGender);
+  const allGender = myData.map(element => element.gender);
+  const everyGender = Array.from(new Set(allGender));   //si el genero no esta pushealo
+// console.log(everyGender);
 
-  let everyGender = [];
-  for (let i = 0; i < allGender.length; i++){
-      if(!everyGender.includes(allGender[i])){
-          everyGender.push(allGender[i]);
-      }
-  }
-  console.log(everyGender);
+
+  const allOrigin = myData.map(element => element.origin.name);
+  const everyOrigin = Array.from(new Set(allOrigin));
+// console.log(everyOrigin)
+
+ const allCharacter = myData.map(element => element.name);
+ const everyCharacter = Array.from(new Set(allCharacter));
+
+
+
 }
 
 
@@ -35,3 +38,13 @@ console.log(genderMale);
 
 const genderLess = gender.filter((genderLess) => genderLess.gender === 'Genderless');
 console.log(genderLess);*/
+
+// const everyOrigin = allOrigin.filter((valor, indice) => {
+//     return allOrigin.indexOf(valor) === indice;
+// });
+// console.log(everyOrigin)
+
+// const everyOrigin1 = new Set(allOrigin);
+// const unicos = [... everyOrigin1];
+
+// console.log(unicos);
