@@ -1,4 +1,3 @@
-//import { example } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 import {selectedOptions} from './data.js';
 const myData = data.results;
@@ -15,39 +14,29 @@ const showNames = () => {
         let image = document.createElement('img');
         firstDiv.appendChild(image);
         image.src = myData[i].image;
+        image.setAttribute('class', 'imgCharacter');
+
+        let divElement = document.createElement('div');
+        firstDiv.appendChild(divElement);
+        divElement.setAttribute('class', 'divElement');
 
         let nameP = document.createElement('p');
-        firstDiv.appendChild(nameP);
+        divElement.appendChild(nameP);
         nameP.innerHTML = myData[i].name;
+        nameP.setAttribute('class', 'characterName');
 
         let statusP = document.createElement('p');
-        firstDiv.appendChild(statusP);
+        divElement.appendChild(statusP);
         statusP.innerHTML = myData[i].status;
+        statusP.setAttribute('class', 'characterStatus');
         
         let originP = document.createElement('p');
-        firstDiv.appendChild(originP);
-        originP.innerHTML = myData[i].origin.name;
+        divElement.appendChild(originP);
+        originP.innerHTML = 'Origin: ' +myData[i].origin.name;
+        originP.setAttribute('class', 'characterOrigin');
     }
 }
 showNames();
-
-const showCharacter = myData.map(elemento => {
-    const name1 = elemento.name;
-    const status1 = elemento.status;
-    const origin1 = elemento.origin.name;
-    console.log(name1, status1, origin1);
-    const everyCharacter = Array.from;
-    console.log(everyCharacter);
-});
-
-
-
-
-// const personaje1 = results1[0];
-// console.log(personaje1);
-
-//export const names = results1.map((character) => character.name);
-
 
 
 

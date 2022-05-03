@@ -1,6 +1,65 @@
-.firstDiv {
-    color: white;
-    background-color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body{
+    background: rgba(34, 34, 34, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+.logoRickyMorty{
     display: flex;
-    margin: 10px;
+    justify-content: center;
+
+    margin: 40px 0px 60px 0px;
+
+    width: 100%;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.firstDiv {
+    color: rgba(57, 57, 57, 1);
+    background: rgba(186, 227, 17, 1);
+
+    width: 380px;
+    height: 170px;
+    margin: 15px 15px;
+
+    border-radius: 25px;
+    display: flex;
+}
+
+.imgCharacter {
+    border-radius: 25px 0px 0px 25px;
+}
+
+.divElement {
+    margin-left: 10px;
+}
+
+.characterName{
+    color: rgba(57, 57, 57, 1);
+
+    font-size: 23px;
+    font-weight: 600;
+
+    margin: 10px 0px 0px;
+}
+
+.characterStatus{
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+
+    margin: 0px 0px 10px 0px;
+}
+
+.characterOrigin{
+    font-weight: 400;
+
+    color: rgba(57, 57, 57, 1);
 }

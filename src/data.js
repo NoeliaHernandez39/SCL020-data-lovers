@@ -10,12 +10,20 @@ export const selectedOptions = (myData) => {
   const everyOrigin = Array.from(new Set(allOrigin));
 // console.log(everyOrigin)
 
- const allCharacter = myData.map(element => element.name);
- const everyCharacter = Array.from(new Set(allCharacter));
-
-
-
+  const allCharacter = myData.map(element => element.name);
+  const everyCharacter = Array.from(new Set(allCharacter));
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
