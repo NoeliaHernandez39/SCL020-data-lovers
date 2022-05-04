@@ -16,6 +16,23 @@ body{
     width: 100%;
 }
 
+#searchBar{
+    display: flex;
+    justify-content: center;
+}
+
+#textBar{
+    width: 790px;
+    margin-bottom: 14px;
+    padding: 14px;
+}
+
+
+.magnifyingGlassImg{
+    width: 30px;
+    height: 33px;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;
