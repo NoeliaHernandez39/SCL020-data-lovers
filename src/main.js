@@ -32,7 +32,7 @@ const showNames = () => {
         
         let originP = document.createElement('p');
         divElement.appendChild(originP);
-        originP.innerHTML = 'Origin: ' +myData[i].origin.name;
+        originP.innerHTML = 'Origin:</br>' +myData[i].origin.name;
         originP.setAttribute('class', 'characterOrigin');
     }
 }

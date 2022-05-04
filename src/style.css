@@ -11,25 +11,42 @@ body{
     display: flex;
     justify-content: center;
 
-    margin: 40px 0px 60px 0px;
+    margin: 40px 0px 30px 0px;
 
     width: 100%;
 }
 
-#searchBar{
+#searchBar {
+    padding-bottom: 20px;
+}
+
+#searchBar form {
     display: flex;
     justify-content: center;
 }
 
-#textBar{
-    width: 790px;
-    padding: 14px;
+#textBar {
+    padding: 16px 0px 16px 0px;
+    font-size: 18px;
+    width: 800px;
+    border-radius: 20px 0px 0px 20px;
+    border: 0px;
+}
+
+input#textBar {
+    padding-left: 10px;
+}
+#btnSearch {
+  width: 90px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: #D9D9D9;
+  border: 0px;
 }
 
 
-.magnifyingGlassImg{
+.magnifyingGlassImg {
     width: 30px;
-    height: 33px;
+    height: 30px;
 }
 
 #main {
@@ -59,9 +76,9 @@ body{
 }
 
 .characterName{
-    color: rgba(57, 57, 57, 1);
+    color: rgb(57, 57, 57, 1);
 
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 600;
 
     margin: 10px 0px 0px;
@@ -69,13 +86,19 @@ body{
 
 .characterStatus{
     color: rgba(255, 255, 255, 1);
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 400;
 
     margin: 0px 0px 10px 0px;
 }
 
 .characterOrigin{
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
 
-    color: rgba(57, 57, 57, 1);
+    color: #393939;
+}
+
+.characterOrigin::first-line {
+    color: #767676;
 }
