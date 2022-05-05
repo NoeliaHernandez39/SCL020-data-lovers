@@ -6,9 +6,9 @@ export const selectedOptions = (myData) => {
 // console.log(everyGender);
 
 
-  const allOrigin = myData.map(element => element.origin.name);
-  const everyOrigin = Array.from(new Set(allOrigin));
-// console.log(everyOrigin)
+  const allSpecies = myData.map(element => element.species);
+  const everySpecie = Array.from(new Set(allSpecies));
+  console.log(everySpecie);
 
   const allCharacter = myData.map(element => element.name);
   const everyCharacter = Array.from(new Set(allCharacter));
