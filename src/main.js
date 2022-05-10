@@ -3,10 +3,11 @@ import {selectedOptions} from './data.js';
 const myData = data.results;
 selectedOptions(myData);
 
+let main = document.getElementById('main');
+
 const showNames = () => {
     for(let i = 0; i < myData.length; i++){
 
-        let main = document.getElementById('main');
         let firstDiv = document.createElement('div');
         main.appendChild(firstDiv);
         firstDiv.setAttribute('class', 'firstDiv');
@@ -37,8 +38,4 @@ const showNames = () => {
     }
 }
 showNames();
-
-
-
-
 

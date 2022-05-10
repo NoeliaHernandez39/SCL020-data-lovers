@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel='stylesheet' href='style.css' />
   </head>
   <body>
     <header>
-      <div class="logoRickyMorty">
-        <img src="img/Rick_and_Morty.png" alt="Logo Rick_and_Morty">
+      <div class='logoRickyMorty'>
+        <img src='img/Rick_and_Morty.png' alt='Logo Rick_and_Morty'>
       </div>
-      <div id="searchBar">
+      <div id="everyOption">
         <form>
-          <input type="text" placeholder="Search.." name="search" id="textBar">
-          <button type="submit" id="btnSearch"><img src="img/magnifyingGlass.png" class="magnifyingGlassImg"></button>
+          <input type='text' placeholder='Search..' name='search' id='textBar' onkeyup='myFunction'>
         </form>
-      </div>
-			<div id="selected-options">
+			<div id='selected-options'>
 				<select id="gender-select">
 					<option value="gender">Gender</option>
 					<option value="female">Female</option>
@@ -46,9 +44,10 @@
 					<option value="parasite">Parasite</option>
 				</select>
 			</div>
+		</div>
 		</header>
-		<main id="main">
+		<main id='main'>
 		</main>
-		<script src="main.js" type="module"></script>
+		<script src='main.js' type='module'></script>
 	</body>
 </html>

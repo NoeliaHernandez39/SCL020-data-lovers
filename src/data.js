@@ -2,18 +2,17 @@
 export const selectedOptions = (myData) => {
 
   const allGender = myData.map(element => element.gender);
-  const everyGender = Array.from(new Set(allGender));   //si el genero no esta pushealo
+  const everyGender = Array.from(new Set(allGender));
 // console.log(everyGender);
 
 
   const allSpecies = myData.map(element => element.species);
   const everySpecie = Array.from(new Set(allSpecies));
-  console.log(everySpecie);
+// console.log(everySpecie);
 
   const allCharacter = myData.map(element => element.name);
   const everyCharacter = Array.from(new Set(allCharacter));
 }
-
 
 
 
