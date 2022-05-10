@@ -8,7 +8,7 @@ body{
 
 
 .logoRickyMorty{
-   text-align: center;
+    text-align: center;
 }
 
 .logoRickyMorty img {
@@ -19,12 +19,11 @@ body{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin: 0;
+    margin: 0px 20px;
 }
 
 #selected-options {
     width: 510px;
-    margin: 0px 0px 20px 173px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
