@@ -41,20 +41,20 @@ showNames();
 
 
 const textBar = document.getElementById('textBar');
-textBar.addEventListener('keyup', (e) => {
-    //console.log(textBar.value);
-    const searchString = e.target.value.toLowerCase();
+textBar.addEventListener('keyup', () => {
+    console.log(textBar.value);
+    const searchString = textBar.value.toLowerCase();
 
     const filteredCharaters = myData.filter((character) => {
         return (
             character.name.toLowerCase().includes(searchString)
         );
     });
-    //console.log(filteredCharaters);
+    console.log(filteredCharaters);
     showChar(filteredCharaters);
 })
 
-const showChar = (characters) =>{
+/*const showChar = (characters) =>{
     const showFilterChar = characters.map((character) => {
         return `
         <div class="firstDiv">
@@ -68,5 +68,5 @@ const showChar = (characters) =>{
         `
     })
     main.innerHTML = showFilterChar;
-}
+}*/
 

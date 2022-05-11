@@ -2,9 +2,9 @@
 export const selectedOptions = (myData) => {
 
   const allGender = myData.map(element => element.gender);
-  console.log(allGender);
+  //console.log(allGender);
   const everyGender = Array.from(new Set(allGender));
-  console.log(everyGender);
+  //console.log(everyGender);
 
 
   const allSpecies = myData.map(element => element.species);
