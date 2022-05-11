@@ -1,5 +1,42 @@
+export const textBar = document.getElementById('textBar');
+textBar.addEventListener('keyup', (myData) => {
+    console.log(textBar.value);
+    const searchString = textBar.value.toLowerCase();
 
-export const selectedOptions = (myData) => {
+    const filteredCharaters = myData.filter((character) => {
+        return (
+            character.name.toLowerCase().includes(searchString)
+        );
+    });
+    console.log(filteredCharaters);
+    showChar(filteredCharaters);
+})
+
+export const showChar = (characters) =>{
+  const showFilterChar = characters.map((character) => {
+      return `
+      <div class="firstDiv">
+      <img src="${character.image}" class="imgCharacter"></img>
+          <div class="divElement">
+              <p class="characterName">${character.name}</p>
+              <p class="characterStatus">${character.status}</p>
+              <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
+          </div>
+      </div>
+      `
+  })
+  main.innerHTML = showFilterChar;
+}
+
+
+
+
+
+
+
+
+
+/*export const selectedOptions = (myData) => {
 
   const allGender = myData.map(element => element.gender);
   //console.log(allGender);
@@ -13,16 +50,7 @@ export const selectedOptions = (myData) => {
 
   const allCharacter = myData.map(element => element.name);
   const everyCharacter = Array.from(new Set(allCharacter));
-}
-
-
-
-
-
-
-
-
-
+}*/
 
 
 

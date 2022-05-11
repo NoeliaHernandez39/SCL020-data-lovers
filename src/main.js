@@ -1,7 +1,11 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {selectedOptions} from './data.js';
+import {showChar, textBar, selectedOptions} from './data.js';
+
+
 const myData = data.results;
 selectedOptions(myData);
+showChar(myData);
+
 
 let main = document.getElementById('main');
 
@@ -33,14 +37,14 @@ const showNames = () => {
         
         let originP = document.createElement('p');
         divElement.appendChild(originP);
-        originP.innerHTML = 'Origin:</br>' +myData[i].origin.name;
+        originP.innerHTML = 'Origin:</br>' + myData[i].origin.name;
         originP.setAttribute('class', 'characterOrigin');
     }
 }
 showNames();
 
 
-const textBar = document.getElementById('textBar');
+/*const textBar = document.getElementById('textBar');
 textBar.addEventListener('keyup', () => {
     console.log(textBar.value);
     const searchString = textBar.value.toLowerCase();
@@ -68,5 +72,5 @@ const showChar = (characters) =>{
         `
     })
     main.innerHTML = showFilterChar;
-}
+}*/
 
