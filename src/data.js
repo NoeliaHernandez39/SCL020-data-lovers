@@ -1,5 +1,5 @@
 const textBar = document.getElementById('textBar');
-export const textBarFun = (myData) => {
+export const textBarFunc = (myData) => {
   textBar.addEventListener('keyup', () => {
     console.log(textBar.value);
     const searchString = textBar.value.toLowerCase();

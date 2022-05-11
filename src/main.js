@@ -1,7 +1,7 @@
 import data from './data/rickandmorty/rickandmorty.js';
 import {showChar, textBarFun} from './data.js';
 showChar(myData);
-textBarFun(myData);
+textBarFunc(myData);
 
 const myData = data.results;
 let main = document.getElementById('main');
