@@ -54,7 +54,7 @@ textBar.addEventListener('keyup', () => {
     showChar(filteredCharaters);
 })
 
-/*const showChar = (characters) =>{
+const showChar = (characters) =>{
     const showFilterChar = characters.map((character) => {
         return `
         <div class="firstDiv">
@@ -68,5 +68,5 @@ textBar.addEventListener('keyup', () => {
         `
     })
     main.innerHTML = showFilterChar;
-}*/
+}
 
