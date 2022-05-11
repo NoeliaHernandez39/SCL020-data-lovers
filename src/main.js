@@ -1,12 +1,13 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {showChar, textBarFunc, origins, species, status} from './data.js';
+import {showChar, textBarFunc, origins, species, status, orSelectFunc} from './data.js';
 const myData = data.results;
+orSelectFunc(myData);
 showChar(myData);
 textBarFunc(myData);
 
 let main = document.getElementById('main');
 
-const showNames = () => {
+export const showNames = () => {
     for(let i = 0; i < myData.length; i++){
 
         let firstDiv = document.createElement('div');
@@ -39,6 +40,7 @@ const showNames = () => {
     }
 }
 showNames();
+
 
 let optionOrigin = origins(myData);
 export const showOptionOrigins = () => {
@@ -73,39 +75,3 @@ const showOptionStatus = () => {
     }
 }
 showOptionStatus();
-
-
-let selectOrigin = document.getElementById('origin-select');
-const orSelectFunc = (myData) => {
-    selectOrigin.addEventListener('change', () =>{
-        let originSelected = selectOrigin.value;
-        const filteredOriginCharaters = myData.filter((character) => {
-            return (
-                character.origin.name.includes(originSelected)
-            );
-        });
-        showOrigin(filteredOriginCharaters);
-
-        if(originSelected === 'origin'){
-            return showNames();
-        }
-    });
-}
-orSelectFunc(myData);
-
-
-const showOrigin = (characters) =>{
-    const showFilterOrigin = characters.map((character) => {
-        return `
-        <div class="firstDiv">
-        <img src="${character.image}" class="imgCharacter"></img>
-            <div class="divElement">
-                <p class="characterName">${character.name}</p>
-                <p class="characterStatus">${character.status}</p>
-                <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
-            </div>
-        </div>
-        `
-    })
-    main.innerHTML = showFilterOrigin;
-}

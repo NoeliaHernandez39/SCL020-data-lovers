@@ -1,3 +1,4 @@
+import {showNames} from './main.js';
 //filtra personajes por barra de busqueda
 const textBar = document.getElementById('textBar');
 export const textBarFunc = (myData) => {
@@ -28,7 +29,7 @@ export const showChar = (characters) =>{
       </div>
       `
   })
-  main.innerHTML = showFilterChar;
+  main.innerHTML = showFilterChar; // tenemos que iterar el resultado del map
 }
 
 // muestra opciones de filtrado
@@ -52,40 +53,22 @@ export const status = (myData) => {
 
 // muestra personajes filtrados 
 
-// const originSelect = document.getElementById('origin-select');
-// export const originSelectFunc = (myData) => {
-//   originSelect.addEventListener('click', () => {
-//     console.log(originSelect.value);
-//     const searchString = textBar.value.toLowerCase();
+let selectOrigin = document.getElementById('origin-select');
+export const orSelectFunc = (myData) => {
+    selectOrigin.addEventListener('change', () =>{
+        let originSelected = selectOrigin.value;
+        const filteredOriginCharaters = myData.filter((character) => {
+            return (
+                character.origin.name.includes(originSelected)
+            );
+        });
+        showChar(filteredOriginCharaters);
 
-//     const filteredCharaters = myData.filter((character) => {
-//         return (
-//             character.name.toLowerCase().includes(searchString)
-//         );
-//     });
-//     console.log(filteredCharaters);
-//     showChar(filteredCharaters);
-//   })
-// }
-
-
-
-
-
-// const originsFiltered = originsFilter.filter((originsFiltered) => {
-//   return origins[i].includes()
-// })
-
-
-
-/*const genderFemale = results1.filter((genderFemale) => genderFemale.gender === 'Female');
-console.log(genderFemale);
-
-const genderUnknown = results1.filter((genderUnknown) => genderUnknown.gender === 'unknown');
-console.log(genderUnknown);
-
-const nogender = results1.filter((nogender) => nogender.gender === 'Genderless');
-console.log(nogender);*/
+        if(originSelected === 'origin'){
+            return showNames();
+        }
+    });
+}
 
 
 
