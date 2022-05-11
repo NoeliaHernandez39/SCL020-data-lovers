@@ -49,9 +49,14 @@ export const status = (myData) => {
   return everyStatus;
 }
 
+export const filterOrigin = (myData) => {
+  const filteredOrigins = origins.map(element => element.status);
+  const everyStatus = Array.from(new Set(allStatus));
+  return everyStatus;
+}
 
 
-/*const genderMale = results1.filter((genderMale) => genderMale.gender === 'Male');
+/*const genderMale = .filter((genderMale) => genderMale.gender === 'Male');
 console.log(genderMale);
 
 const genderFemale = results1.filter((genderFemale) => genderFemale.gender === 'Female');
