@@ -1,5 +1,5 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {showChar, textBarFun} from './data.js';
+import {showChar, textBarFunc} from './data.js';
 showChar(myData);
 textBarFunc(myData);
 
