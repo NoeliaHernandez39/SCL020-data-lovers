@@ -1,5 +1,6 @@
-export const textBar = document.getElementById('textBar');
-textBar.addEventListener('keyup', (myData) => {
+const textBar = document.getElementById('textBar');
+export const textBarFun = (myData) => {
+  textBar.addEventListener('keyup', () => {
     console.log(textBar.value);
     const searchString = textBar.value.toLowerCase();
 
@@ -10,7 +11,8 @@ textBar.addEventListener('keyup', (myData) => {
     });
     console.log(filteredCharaters);
     showChar(filteredCharaters);
-})
+  })
+}
 
 export const showChar = (characters) =>{
   const showFilterChar = characters.map((character) => {

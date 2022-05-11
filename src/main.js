@@ -1,9 +1,10 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {showChar} from './data.js';
+import {showChar, textBarFun} from './data.js';
 
 
 const myData = data.results;
 showChar(myData);
+textBarFun(myData);
 
 
 let main = document.getElementById('main');
