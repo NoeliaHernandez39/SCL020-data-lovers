@@ -1,3 +1,4 @@
+//filtra personajes por barra de busqueda
 const textBar = document.getElementById('textBar');
 export const textBarFunc = (myData) => {
   textBar.addEventListener('keyup', () => {
@@ -30,7 +31,7 @@ export const showChar = (characters) =>{
   main.innerHTML = showFilterChar;
 }
 
-
+// muestra opciones de filtrado
 export const origins = (myData) => {
   const allOrigin = myData.map(element => element.origin.name);
   const everyOrigin = Array.from(new Set(allOrigin));
@@ -49,17 +50,35 @@ export const status = (myData) => {
   return everyStatus;
 }
 
-export const filterOrigin = (myData) => {
-  const filteredOrigins = origins.map(element => element.status);
-  const everyStatus = Array.from(new Set(allStatus));
-  return everyStatus;
-}
+// muestra personajes filtrados 
+
+// const originSelect = document.getElementById('origin-select');
+// export const originSelectFunc = (myData) => {
+//   originSelect.addEventListener('click', () => {
+//     console.log(originSelect.value);
+//     const searchString = textBar.value.toLowerCase();
+
+//     const filteredCharaters = myData.filter((character) => {
+//         return (
+//             character.name.toLowerCase().includes(searchString)
+//         );
+//     });
+//     console.log(filteredCharaters);
+//     showChar(filteredCharaters);
+//   })
+// }
 
 
-/*const genderMale = .filter((genderMale) => genderMale.gender === 'Male');
-console.log(genderMale);
 
-const genderFemale = results1.filter((genderFemale) => genderFemale.gender === 'Female');
+
+
+// const originsFiltered = originsFilter.filter((originsFiltered) => {
+//   return origins[i].includes()
+// })
+
+
+
+/*const genderFemale = results1.filter((genderFemale) => genderFemale.gender === 'Female');
 console.log(genderFemale);
 
 const genderUnknown = results1.filter((genderUnknown) => genderUnknown.gender === 'unknown');
@@ -70,18 +89,3 @@ console.log(nogender);*/
 
 
 
-/*const genderMale = gender.filter((genderMale) => genderMale.gender === 'Male');
-console.log(genderMale);
-
-const genderLess = gender.filter((genderLess) => genderLess.gender === 'Genderless');
-console.log(genderLess);*/
-
-// const everyOrigin = allOrigin.filter((valor, indice) => {
-//     return allOrigin.indexOf(valor) === indice;
-// });
-// console.log(everyOrigin)
-
-// const everyOrigin1 = new Set(allOrigin);
-// const unicos = [... everyOrigin1];
-
-// console.log(unicos);

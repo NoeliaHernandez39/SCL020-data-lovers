@@ -41,7 +41,7 @@ const showNames = () => {
 showNames();
 
 let optionOrigin = origins(myData);
-const showOptionOrigins = () => {
+export const showOptionOrigins = () => {
     for(let i = 0; i < optionOrigin.length; i++){
         let selectOrigin = document.getElementById('origin-select');
         let selectOptionOrigin = document.createElement('option');
@@ -50,6 +50,7 @@ const showOptionOrigins = () => {
     }
 }
 showOptionOrigins();
+
 
 let optionSpecies = species(myData);
 const showOptionSpecies = () => {
@@ -74,3 +75,37 @@ const showOptionStatus = () => {
 showOptionStatus();
 
 
+let selectOrigin = document.getElementById('origin-select');
+const orSelectFunc = (myData) => {
+    selectOrigin.addEventListener('change', () =>{
+        let originSelected = selectOrigin.value;
+        const filteredOriginCharaters = myData.filter((character) => {
+            return (
+                character.origin.name.includes(originSelected)
+            );
+        });
+        showOrigin(filteredOriginCharaters);
+
+        if(originSelected === 'origin'){
+            return showNames();
+        }
+    });
+}
+orSelectFunc(myData);
+
+
+const showOrigin = (characters) =>{
+    const showFilterOrigin = characters.map((character) => {
+        return `
+        <div class="firstDiv">
+        <img src="${character.image}" class="imgCharacter"></img>
+            <div class="divElement">
+                <p class="characterName">${character.name}</p>
+                <p class="characterStatus">${character.status}</p>
+                <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
+            </div>
+        </div>
+        `
+    })
+    main.innerHTML = showFilterOrigin;
+}
