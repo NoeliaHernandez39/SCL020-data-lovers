@@ -107,3 +107,6 @@ input#textBar {
     color: #767676;
 }
 
+.selectedOptions {
+    padding-left: 10px;
+}
