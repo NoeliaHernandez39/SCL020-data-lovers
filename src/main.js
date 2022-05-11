@@ -1,12 +1,9 @@
 import data from './data/rickandmorty/rickandmorty.js';
 import {showChar, textBarFun} from './data.js';
-
-
-const myData = data.results;
 showChar(myData);
 textBarFun(myData);
 
-
+const myData = data.results;
 let main = document.getElementById('main');
 
 const showNames = () => {
@@ -42,35 +39,3 @@ const showNames = () => {
     }
 }
 showNames();
-
-
-/*const textBar = document.getElementById('textBar');
-textBar.addEventListener('keyup', () => {
-    console.log(textBar.value);
-    const searchString = textBar.value.toLowerCase();
-
-    const filteredCharaters = myData.filter((character) => {
-        return (
-            character.name.toLowerCase().includes(searchString)
-        );
-    });
-    console.log(filteredCharaters);
-    showChar(filteredCharaters);
-})
-
-const showChar = (characters) =>{
-    const showFilterChar = characters.map((character) => {
-        return `
-        <div class="firstDiv">
-        <img src="${character.image}" class="imgCharacter"></img>
-            <div class="divElement">
-                <p class="characterName">${character.name}</p>
-                <p class="characterStatus">${character.status}</p>
-                <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
-            </div>
-        </div>
-        `
-    })
-    main.innerHTML = showFilterChar;
-}*/
-
