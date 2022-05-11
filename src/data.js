@@ -31,22 +31,23 @@ export const showChar = (characters) =>{
 }
 
 
-export const selectedOptions = (myData) => {
-
+export const origins = (myData) => {
   const allOrigin = myData.map(element => element.origin.name);
   const everyOrigin = Array.from(new Set(allOrigin));
-  console.log(everyOrigin);
-
-
-  const allSpecies = myData.map(element => element.species);
-  const everySpecie = Array.from(new Set(allSpecies));
-  console.log(everySpecie);
-
-  const allStatus = myData.map(element => element.status);
-  const everyStatus = Array.from(new Set(allStatus));
-  console.log(everyStatus);
+  return everyOrigin;
 }
 
+export const species = (myData) => {
+  const allSpecies = myData.map(element => element.species);
+  const everySpecies = Array.from(new Set(allSpecies));
+  return everySpecies;
+}
+
+export const status = (myData) => {
+  const allStatus = myData.map(element => element.status);
+  const everyStatus = Array.from(new Set(allStatus));
+  return everyStatus;
+}
 
 
 
