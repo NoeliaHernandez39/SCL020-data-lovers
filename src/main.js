@@ -1,8 +1,9 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {showChar, textBarFunc} from './data.js';
+import {showChar, textBarFunc, selectedOptions} from './data.js';
 const myData = data.results;
 showChar(myData);
 textBarFunc(myData);
+selectedOptions(myData);
 
 let main = document.getElementById('main');
 

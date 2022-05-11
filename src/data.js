@@ -31,28 +31,21 @@ export const showChar = (characters) =>{
 }
 
 
+export const selectedOptions = (myData) => {
 
-
-
-
-
-
-
-/*export const selectedOptions = (myData) => {
-
-  const allGender = myData.map(element => element.gender);
-  //console.log(allGender);
-  const everyGender = Array.from(new Set(allGender));
-  //console.log(everyGender);
+  const allOrigin = myData.map(element => element.origin.name);
+  const everyOrigin = Array.from(new Set(allOrigin));
+  console.log(everyOrigin);
 
 
   const allSpecies = myData.map(element => element.species);
   const everySpecie = Array.from(new Set(allSpecies));
-// console.log(everySpecie);
+  console.log(everySpecie);
 
-  const allCharacter = myData.map(element => element.name);
-  const everyCharacter = Array.from(new Set(allCharacter));
-}*/
+  const allStatus = myData.map(element => element.status);
+  const everyStatus = Array.from(new Set(allStatus));
+  console.log(everyStatus);
+}
 
 
 
