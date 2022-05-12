@@ -1,14 +1,15 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {showChar, textBarFunc, origins, species, status, orSelectFunc} from './data.js';
+import {textBarFunc,origins, species, status, orSelectFunc, stSelectFunc, spSelectFunc} from './data.js';
 const myData = data.results;
 orSelectFunc(myData);
-showChar(myData);
+stSelectFunc(myData);
+spSelectFunc(myData);
 textBarFunc(myData);
 
 let main = document.getElementById('main');
 
-export const showNames = () => {
-    for(let i = 0; i < myData.length; i++){
+export const showNames = (item) => {
+    for(let i = 0; i < item.length; i++){
 
         let firstDiv = document.createElement('div');
         main.appendChild(firstDiv);
@@ -39,7 +40,8 @@ export const showNames = () => {
         originP.setAttribute('class', 'characterOrigin');
     }
 }
-showNames();
+showNames(myData);
+
 
 
 let optionOrigin = origins(myData);

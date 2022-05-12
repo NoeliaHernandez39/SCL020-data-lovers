@@ -16,21 +16,6 @@ export const textBarFunc = (myData) => {
   })
 }
 
-export const showChar = (characters) =>{
-  const showFilterChar = characters.map((character) => {
-      return `
-      <div class="firstDiv">
-      <img src="${character.image}" class="imgCharacter"></img>
-          <div class="divElement">
-              <p class="characterName">${character.name}</p>
-              <p class="characterStatus">${character.status}</p>
-              <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
-          </div>
-      </div>
-      `
-  })
-  main.innerHTML = showFilterChar; // tenemos que iterar el resultado del map
-}
 
 // muestra opciones de filtrado
 export const origins = (myData) => {
@@ -70,5 +55,54 @@ export const orSelectFunc = (myData) => {
     });
 }
 
+let selectStatus = document.getElementById('status-select');
+export const stSelectFunc = (myData) => {
+    selectStatus.addEventListener('change', () =>{
+        let statusSelected = selectStatus.value;
+        const filteredStatusCharaters = myData.filter((character) => {
+            return (
+                character.status.includes(statusSelected)
+            );
+        });
+        showChar(filteredStatusCharaters);
 
+        if(statusSelected === 'status'){
+            return showNames();
+        }
+    });
+}
+
+let selectSpecies = document.getElementById('species-select');
+export const spSelectFunc = (myData) => {
+    selectSpecies.addEventListener('change', () =>{
+        let speciesSelected = selectSpecies.value;
+        const filteredSpeciesCharaters = myData.filter((character) => {
+            return (
+                character.species.includes(speciesSelected)
+            );
+        });
+        showChar(filteredSpeciesCharaters);
+
+        if(speciesSelected === 'species'){
+            return showNames();
+        }
+    });
+}
+
+export const showChar = (characters) =>{
+  const showFilterChar = characters.map((character) => {
+      return `
+      <div class="firstDiv">
+      <img src="${character.image}" class="imgCharacter"></img>
+          <div class="divElement">
+              <p class="characterName">${character.name}</p>
+              <p class="characterStatus">${character.status}</p>
+              <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
+          </div>
+      </div>
+      `
+  })
+
+  main.innerHTML = showFilterChar.join(''); // tenemos que iterar el resultado del map
+}
 
