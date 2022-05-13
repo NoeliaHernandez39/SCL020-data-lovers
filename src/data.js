@@ -50,10 +50,11 @@ export const orSelectFunc = (myData) => {
         showChar(filteredOriginCharaters);
 
         if(originSelected === 'origin'){
-            return showNames();
+            return showNames(myData);
         }
     });
 }
+
 
 let selectStatus = document.getElementById('status-select');
 export const stSelectFunc = (myData) => {
@@ -67,10 +68,11 @@ export const stSelectFunc = (myData) => {
         showChar(filteredStatusCharaters);
 
         if(statusSelected === 'status'){
-            return showNames();
+            return showNames(myData);
         }
     });
 }
+
 
 let selectSpecies = document.getElementById('species-select');
 export const spSelectFunc = (myData) => {
@@ -84,10 +86,11 @@ export const spSelectFunc = (myData) => {
         showChar(filteredSpeciesCharaters);
 
         if(speciesSelected === 'species'){
-            return showNames();
+            return showNames(myData);
         }
     });
 }
+
 
 export const showChar = (characters) =>{
     const showFilterChar = characters.map((character) => {
@@ -105,4 +108,7 @@ export const showChar = (characters) =>{
 
   main.innerHTML = showFilterChar.join(''); // tenemos que iterar el resultado del map
 }
+
+
+
 
