@@ -56,24 +56,6 @@ export const orSelectFunc = (myData) => {
 }
 
 
-let selectStatus = document.getElementById('status-select');
-export const stSelectFunc = (myData) => {
-    selectStatus.addEventListener('change', () =>{
-        let statusSelected = selectStatus.value;
-        const filteredStatusCharaters = myData.filter((character) => {
-            return (
-                character.status.includes(statusSelected)
-            );
-        });
-        showChar(filteredStatusCharaters);
-
-        if(statusSelected === 'status'){
-            return showNames(myData);
-        }
-    });
-}
-
-
 let selectSpecies = document.getElementById('species-select');
 export const spSelectFunc = (myData) => {
     selectSpecies.addEventListener('change', () =>{
@@ -86,6 +68,24 @@ export const spSelectFunc = (myData) => {
         showChar(filteredSpeciesCharaters);
 
         if(speciesSelected === 'species'){
+            return showNames(myData);
+        }
+    });
+}
+
+
+let selectStatus = document.getElementById('status-select');
+export const stSelectFunc = (myData) => {
+    selectStatus.addEventListener('change', () =>{
+        let statusSelected = selectStatus.value;
+        const filteredStatusCharaters = myData.filter((character) => {
+            return (
+                character.status.includes(statusSelected)
+            );
+        });
+        showChar(filteredStatusCharaters);
+
+        if(statusSelected === 'status'){
             return showNames(myData);
         }
     });
