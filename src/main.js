@@ -1,5 +1,5 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {textBarFunc,origins, species, status, orSelectFunc, stSelectFunc, spSelectFunc} from './data.js';
+import {textBarFunc,origins, species, status, orSelectFunc , stSelectFunc, spSelectFunc} from './data.js';
 const myData = data.results;
 orSelectFunc(myData);
 stSelectFunc(myData);

@@ -2,7 +2,7 @@ import {showNames} from './main.js';
 //filtra personajes por barra de busqueda
 const textBar = document.getElementById('textBar');
 export const textBarFunc = (myData) => {
-  textBar.addEventListener('keyup', () => {
+    textBar.addEventListener('keyup', () => {
     console.log(textBar.value);
     const searchString = textBar.value.toLowerCase();
 
@@ -13,27 +13,27 @@ export const textBarFunc = (myData) => {
     });
     console.log(filteredCharaters);
     showChar(filteredCharaters);
-  })
+    })
 }
 
 
 // muestra opciones de filtrado
 export const origins = (myData) => {
-  const allOrigin = myData.map(element => element.origin.name);
-  const everyOrigin = Array.from(new Set(allOrigin));
-  return everyOrigin;
+    const allOrigin = myData.map(element => element.origin.name);
+    const everyOrigin = Array.from(new Set(allOrigin));
+    return everyOrigin;
 }
 
 export const species = (myData) => {
-  const allSpecies = myData.map(element => element.species);
-  const everySpecies = Array.from(new Set(allSpecies));
-  return everySpecies;
+    const allSpecies = myData.map(element => element.species);
+    const everySpecies = Array.from(new Set(allSpecies));
+    return everySpecies;
 }
 
 export const status = (myData) => {
-  const allStatus = myData.map(element => element.status);
-  const everyStatus = Array.from(new Set(allStatus));
-  return everyStatus;
+    const allStatus = myData.map(element => element.status);
+    const everyStatus = Array.from(new Set(allStatus));
+    return everyStatus;
 }
 
 // muestra personajes filtrados 
