@@ -90,18 +90,18 @@ export const spSelectFunc = (myData) => {
 }
 
 export const showChar = (characters) =>{
-  const showFilterChar = characters.map((character) => {
-      return `
-      <div class="firstDiv">
-      <img src="${character.image}" class="imgCharacter"></img>
-          <div class="divElement">
-              <p class="characterName">${character.name}</p>
-              <p class="characterStatus">${character.status}</p>
-              <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
-          </div>
-      </div>
-      `
-  })
+    const showFilterChar = characters.map((character) => {
+        return `
+        <div class="firstDiv">
+        <img src="${character.image}" class="imgCharacter"></img>
+            <div class="divElement">
+                <p class="characterName">${character.name}</p>
+                <p class="characterStatus">${character.status}</p>
+                <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
+            </div>
+        </div>
+        `
+    })
 
   main.innerHTML = showFilterChar.join(''); // tenemos que iterar el resultado del map
 }
