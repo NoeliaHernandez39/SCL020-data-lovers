@@ -51,38 +51,26 @@ export const spSelectFunc = (myData, speciesSelected) => {
         return showChar(filteredSpeciesCharaters);
 }
 
-
-let selectStatus = document.getElementById('status-select');
-export const stSelectFunc = myData => {
-    selectStatus.addEventListener('change', () =>{
-        let statusSelected = selectStatus.value;
+export const stSelectFunc = (myData, statusSelected) => {
         const filteredStatusCharaters = myData.filter((character) => {
             return (
                 character.status.includes(statusSelected)
             );
         });
-        showChar(filteredStatusCharaters);
-
-        if(statusSelected === 'status'){
-            return showNames(myData);
-        }
-    });
+        return showChar(filteredStatusCharaters);
 }
 
-const selectSort = document.getElementById('sort-select');
-export const soSelecFunc = myData => {
-    selectSort.addEventListener ('click', () => {
-        let selectedSort = selectSort.value;
+
+export const soSelecFunc = (myData, sortSelected) => {
         let arr= [...myData]
-        if (selectedSort === 'sortA'){
+        if (sortSelected === 'sortA'){
             const sortedCharA = arr.sort((a, b) => {
                 if (a.name < b.name) return -1;
                 return 1;
             });
-            console.log(myData, sortedCharA)
             return showChar(sortedCharA);
         }
-        else if (selectedSort === 'sortD') {
+        else if (sortSelected === 'sortD') {
             const sortedCharD = arr.sort((a, b) => {
                 if (a.name < b.name) return 1;
                 return -1;
@@ -90,8 +78,8 @@ export const soSelecFunc = myData => {
             return showChar(sortedCharD);
         }
         else{
-        return showChar(myData);}
-    });
+        return showChar(myData);
+    }
 }
 
 export const showChar = characters => {
@@ -107,7 +95,7 @@ export const showChar = characters => {
         </div>
         `
     });
-    return showFilterChar.join('');
+    return showFilterChar;
 }
 
 

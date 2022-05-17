@@ -10,6 +10,7 @@ soSelecFunc(myData);
 let main = document.querySelector('main');
 
 main.innerHTML = showChar(myData);
+
 export const showNames = (item) => {
     for(let i = 0; i < item.length; i++){
 
@@ -78,25 +79,39 @@ showOptionStatus();
 // muestra personajes filtrados (main)
 
 let selectOrigin = document.getElementById('origin-select');
-    selectOrigin.addEventListener('change', () =>{
+    selectOrigin.addEventListener('change', () => {
     let originSelected = selectOrigin.value;
     let orResults = orSelectFunc(myData, originSelected);
     main.innerHTML = orResults;
-    if(originSelected === 'origins'){
-        return showNames(myData);
-    }
-})
+});
 
 let selectSpecies = document.getElementById('species-select');
 selectSpecies.addEventListener('change', () => {
     let speciesSelected = selectSpecies.value;
     let spResults = spSelectFunc(myData, speciesSelected);
     main.innerHTML = spResults;
-    
     if(speciesSelected === 'species'){
         return showNames(myData);
     }
 });
+
+let selectStatus = document.getElementById('status-select');
+selectStatus.addEventListener('change', () => {
+    let statusSelected = selectStatus.value;
+    let stResults = stSelectFunc(myData, statusSelected);
+    main.innerHTML = stResults;
+    if(statusSelected === 'status'){
+        return showNames(myData);
+    }
+});
+
+const selectSort = document.getElementById('sort-select');
+selectSort.addEventListener ('click', () => {
+    let sortSelected = selectSort.value;
+    let soResults = soSelecFunc(myData, sortSelected);
+    main.innerHTML = soResults;
+});
+
 
 //textbar (main)
 
