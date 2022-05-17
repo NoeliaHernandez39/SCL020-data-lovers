@@ -1,4 +1,3 @@
-import {showNames} from './main.js'
 //filtra personajes por barra de busqueda
 export const textBarFunc = (myData, searchString) => {
         const filteredCharaters = myData.filter(character => {
