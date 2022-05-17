@@ -1,4 +1,4 @@
-import {main, showNames} from './main.js'
+import {showNames} from './main.js'
 //filtra personajes por barra de busqueda
 const textBar = document.getElementById('textBar');
 export const textBarFunc = myData => {
@@ -13,7 +13,7 @@ export const textBarFunc = myData => {
     });
     console.log(filteredCharaters);
     showChar(filteredCharaters);
-    })
+    });
 }
 
 
@@ -56,21 +56,16 @@ export const orSelectFunc = myData => {
 }
 
 
-let selectSpecies = document.getElementById('species-select');
-export const spSelectFunc = myData => {
-    selectSpecies.addEventListener('change', () =>{
-        let speciesSelected = selectSpecies.value;
+export const spSelectFunc = (myData, speciesSelected) => {
         const filteredSpeciesCharaters = myData.filter((character) => {
             return (
                 character.species.includes(speciesSelected)
             );
         });
-        showChar(filteredSpeciesCharaters);
-
-        if(speciesSelected === 'species'){
+        return showChar(filteredSpeciesCharaters);
+         if(speciesSelected === 'species'){
             return showNames(myData);
         }
-    });
 }
 
 
@@ -95,27 +90,28 @@ const selectSort = document.getElementById('sort-select');
 export const soSelecFunc = myData => {
     selectSort.addEventListener ('click', () => {
         let selectedSort = selectSort.value;
+        let arr= [...myData]
         if (selectedSort === 'sortA'){
-            const sortedCharA = myData.sort((a, b) => {
+            const sortedCharA = arr.sort((a, b) => {
                 if (a.name < b.name) return -1;
                 return 1;
             });
+            console.log(myData, sortedCharA)
             return showChar(sortedCharA);
         }
         else if (selectedSort === 'sortD') {
-            const sortedCharD = myData.sort((a, b) => {
+            const sortedCharD = arr.sort((a, b) => {
                 if (a.name < b.name) return 1;
                 return -1;
-            })
+            });
             return showChar(sortedCharD);
         }
-        else if (selectedSort === 'sorto'){
-            return showChar(myData);
-        }
+        else{
+        return showChar(myData);}
     });
 }
 
-const showChar = characters => {
+export const showChar = characters => {
     const showFilterChar = characters.map((character) => {
         return `
         <div class="firstDiv">
@@ -127,8 +123,8 @@ const showChar = characters => {
             </div>
         </div>
         `
-    })
-    main.innerHTML = showFilterChar.join('');
+    });
+    return showFilterChar.join('');
 }
 
 

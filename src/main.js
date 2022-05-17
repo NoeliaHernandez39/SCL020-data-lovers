@@ -1,5 +1,5 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {textBarFunc, origins, species, status, orSelectFunc , stSelectFunc, spSelectFunc, soSelecFunc} from './data.js';
+import {textBarFunc, origins, species, status, orSelectFunc , stSelectFunc, spSelectFunc, soSelecFunc, showChar} from './data.js';
 const myData = data.results;
 orSelectFunc(myData);
 stSelectFunc(myData);
@@ -7,7 +7,9 @@ spSelectFunc(myData);
 textBarFunc(myData);
 soSelecFunc(myData);
 
-export let main = document.querySelector('main');
+let main = document.querySelector('main');
+
+main.innerHTML = showChar(myData)
 
 export const showNames = (item) => {
     for(let i = 0; i < item.length; i++){
@@ -72,3 +74,10 @@ const showOptionStatus = () => {
     }
 }
 showOptionStatus();
+
+let selectSpecies = document.getElementById('species-select');
+selectSpecies.addEventListener('change', () => {
+    let speciesSelected = selectSpecies.value;
+    let results = spSelectFunc(myData, speciesSelected)
+    
+})
