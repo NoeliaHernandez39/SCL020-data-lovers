@@ -94,7 +94,7 @@ export const showChar = characters => {
         </div>
         `
     });
-    return showFilterChar;
+    return showFilterChar.join('');
 }
 
 
