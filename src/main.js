@@ -9,8 +9,7 @@ soSelecFunc(myData);
 
 let main = document.querySelector('main');
 
-main.innerHTML = showChar(myData)
-
+main.innerHTML = showChar(myData);
 export const showNames = (item) => {
     for(let i = 0; i < item.length; i++){
 
@@ -52,7 +51,7 @@ export const showOptionOrigins = () => {
 }
 showOptionOrigins();
 
-
+//imprime las opciones
 let optionSpecies = species(myData);
 const showOptionSpecies = () => {
     for(let i = 0; i < optionSpecies.length; i++){
@@ -75,9 +74,35 @@ const showOptionStatus = () => {
 }
 showOptionStatus();
 
+
+// muestra personajes filtrados (main)
+
+let selectOrigin = document.getElementById('origin-select');
+    selectOrigin.addEventListener('change', () =>{
+    let originSelected = selectOrigin.value;
+    let orResults = orSelectFunc(myData, originSelected);
+    main.innerHTML = orResults;
+    if(originSelected === 'origins'){
+        return showNames(myData);
+    }
+})
+
 let selectSpecies = document.getElementById('species-select');
 selectSpecies.addEventListener('change', () => {
     let speciesSelected = selectSpecies.value;
-    let results = spSelectFunc(myData, speciesSelected)
+    let spResults = spSelectFunc(myData, speciesSelected);
+    main.innerHTML = spResults;
     
-})
+    if(speciesSelected === 'species'){
+        return showNames(myData);
+    }
+});
+
+//textbar (main)
+
+const textBar = document.getElementById('textBar');
+textBar.addEventListener('keyup', () => {
+    const searchString = textBar.value.toLowerCase();
+    let textBarResults = textBarFunc(myData, searchString);
+    main.innerHTML = textBarResults;
+});

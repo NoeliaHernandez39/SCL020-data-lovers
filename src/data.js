@@ -1,19 +1,12 @@
 import {showNames} from './main.js'
 //filtra personajes por barra de busqueda
-const textBar = document.getElementById('textBar');
-export const textBarFunc = myData => {
-    textBar.addEventListener('keyup', () => {
-    console.log(textBar.value);
-    const searchString = textBar.value.toLowerCase();
-
-    const filteredCharaters = myData.filter(character => {
+export const textBarFunc = (myData, searchString) => {
+        const filteredCharaters = myData.filter(character => {
         return (
             character.name.toLowerCase().includes(searchString)
         );
     });
-    console.log(filteredCharaters);
-    showChar(filteredCharaters);
-    });
+    return showChar(filteredCharaters);
 }
 
 
@@ -36,23 +29,16 @@ export const status = myData => {
     return everyStatus;
 }
 
-// muestra personajes filtrados 
+// muestra personajes filtrados (data)
 
-let selectOrigin = document.getElementById('origin-select');
-export const orSelectFunc = myData => {
-    selectOrigin.addEventListener('change', () =>{
-        let originSelected = selectOrigin.value;
+
+export const orSelectFunc = (myData, originSelected) => {
         const filteredOriginCharaters = myData.filter((character) => {
             return (
                 character.origin.name.includes(originSelected)
             );
         });
-        showChar(filteredOriginCharaters);
-
-        if(originSelected === 'origin'){
-            return showNames(myData);
-        }
-    });
+        return showChar(filteredOriginCharaters);
 }
 
 
@@ -63,9 +49,6 @@ export const spSelectFunc = (myData, speciesSelected) => {
             );
         });
         return showChar(filteredSpeciesCharaters);
-         if(speciesSelected === 'species'){
-            return showNames(myData);
-        }
 }
 
 
