@@ -12,18 +12,23 @@ export const textBarFunc = (myData, searchString) => {
 // muestra opciones de filtrado
 export const origins = myData => {
     const allOrigin = myData.map(element => element.origin.name);
+    //eslint-disable-next-line
     const everyOrigin = Array.from(new Set(allOrigin));
     return everyOrigin;
 }
 
 export const species = myData => {
-    const allSpecies = myData.map(element => element.species);
+    let allSpecies = myData.map(element => element.species);
+    //eslint-disable-next-line
     const everySpecies = Array.from(new Set(allSpecies));
     return everySpecies;
+    
 }
+
 
 export const status = myData => {
     const allStatus = myData.map(element => element.status);
+    //eslint-disable-next-line
     const everyStatus = Array.from(new Set(allStatus));
     return everyStatus;
 }
@@ -97,6 +102,8 @@ export const showChar = characters => {
     return showFilterChar.join('');
 }
 
-
+export const sumar = (a,b) => {
+    return a + b;
+}
 
 

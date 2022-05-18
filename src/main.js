@@ -121,3 +121,4 @@ textBar.addEventListener('keyup', () => {
     let textBarResults = textBarFunc(myData, searchString);
     main.innerHTML = textBarResults;
 });
+
