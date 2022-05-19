@@ -35,3 +35,4 @@ Basamos nuestra planificacion en las historias de usuario que sacamos de nuestra
 Nos organizamos con 3 historias de usuario, que fuimos iterando a medida que avanzamos con el proyecto. 
 
 ![json-interfaz](imgReadme/planning.png)
+
