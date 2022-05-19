@@ -20,18 +20,18 @@ Estos son los resultados de la encuesta que relalizamos con el fin de saber que 
 
 Implementamos todo en nuestro proyecto en base a estos resultados. 
 
-![json-interfaz](showInfo.png)
-![json-interfaz](typesOfFilter.png)
-![json-interfaz](filtercharacter.png)
-![json-interfaz](showcharacter.png)
-![json-interfaz](extras.png)
+![json-interfaz](imgReadme/showInfo.png)
+![json-interfaz](imgReadme/typesOfFilter.png)
+![json-interfaz](imgReadme/filtercharacter.png)
+![json-interfaz](imgReadme/showcharacter.png)
+![json-interfaz](imgReadme/extras.png)
 
 Este es nuesto prototipo de media. Todavia resolviendo unos detalles de la primera vista del usuario pero ya teniamos claro como se veria nuestra data. ç
 
-![json-interfaz](figmaPrototype.png)
+![json-interfaz](imgReadme/figmaPrototype.png)
 ## 3. Nuestra Planning
 Basamos nuestra planificacion en las historias de usuario que sacamos de nuestra encuesta. Fuimos desglozando de a poco los criterios de acpetacion y las definiciones de terminado. 
 
 Nos organizamos con 3 historias de usuario, que fuimos iterando a medida que avanzamos con el proyecto. 
 
-![json-interfaz](planning.png)
+![json-interfaz](imgReadme/planning.png)
