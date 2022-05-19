@@ -36,3 +36,5 @@ Nos organizamos con 3 historias de usuario, que fuimos iterando a medida que ava
 
 ![json-interfaz](imgReadme/planning.png)
 
+Link de nuestra pagina https://noeliahernandez39.github.io/SCL020-data-lovers/src/index.html
+
