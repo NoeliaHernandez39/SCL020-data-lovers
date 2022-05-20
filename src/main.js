@@ -106,7 +106,7 @@ selectStatus.addEventListener('change', () => {
 });
 
 const selectSort = document.getElementById('sort-select');
-selectSort.addEventListener ('click', () => {
+selectSort.addEventListener ('change', () => {
     let sortSelected = selectSort.value;
     let soResults = soSelecFunc(myData, sortSelected);
     main.innerHTML = soResults;
