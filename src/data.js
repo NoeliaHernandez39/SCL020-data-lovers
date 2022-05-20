@@ -9,6 +9,8 @@ export const textBarFunc = (myData, searchString) => {
 }
 
 
+
+
 // muestra opciones de filtrado
 export const origins = myData => {
     const allOrigin = myData.map(element => element.origin.name);
