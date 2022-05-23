@@ -98,3 +98,18 @@ describe('Tests for the file data.js', () => {
 
   
 });
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    let result =  `<div class="firstDiv">
+    <img src="${character.image}" class="imgCharacter"></img>
+        <div class="divElement">
+            <p class="characterName">${character.name}</p>
+            <p class="characterStatus">${character.status}</p>
+            <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
+        </div>
+    </div>`
+    expect(showChar).toContain(result);
+    });
+});
