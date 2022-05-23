@@ -1,4 +1,8 @@
-import {origins} from '../src/data.js';
+import { it } from 'eslint/lib/rule-tester/rule-tester';
+import {origins,
+        species,
+        status
+} from '../src/data.js';
 
 // let myData = [      {
 //   "id": 8,
@@ -71,10 +75,26 @@ import {origins} from '../src/data.js';
 
 describe('Tests for the file data.js', () => {
 
-  it('has to return filtered characters', ()=> {
+  it('has to return filtered characters by their origin', ()=>{
     const originChar = [{'origin': 'Earth'}, {'origin': 'Mars'}];
     const result = originChar.origin;
     const originFunc = origins(originChar);
     expect(originFunc).toContain(result);
     });
+
+  it('has to return filtered character by their species', ()=>{
+    const speciesChar = [[{'specie': 'Human'}], [{'specie': 'Alien'}]];
+    const result = speciesChar.specie;
+    const speciesFunc = species(speciesChar);
+    expect(speciesFunc).toContain(result);
+  });
+
+  it('has to return filtered characters by their status', ()=>{
+    const statusChar = [[{'status': 'a'}], [{'status': 'b'}]]
+    const result = statusChar.status;
+    const statusFunc = status(statusChar);
+    expect(statusFunc).toContain(result);
+  });
+
+  
 });
