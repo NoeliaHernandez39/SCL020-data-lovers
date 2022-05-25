@@ -1,77 +1,38 @@
-import { it } from 'eslint/lib/rule-tester/rule-tester';
-import {origins,
-        species,
-        status
-} from '../src/data.js';
+import data from '../src/data/rickandmorty/rickandmorty';
+import {origins, species, status, orSelectFunc, spSelectFunc, stSelectFunc, soSelecFunc, showChar, textBarFunc} from '../src/data.js';
 
-// let myData = [      {
-//   "id": 8,
-//   "name": "Adjudicator Rick",
-//   "status": "Dead",
-//   "species": "Human",
-//   "type": "",
-//   "gender": "Male",
-//   "origin": {
-//       "name": "unknown",
-//       "url": ""
-//   },
-//   "location": {
-//       "name": "Citadel of Ricks",
-//       "url": "https://rickandmortyapi.com/api/location/3"
-//   },
-//   "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/8.jpeg",
-//   "episode": [
-//       "https://rickandmortyapi.com/api/episode/28"
-//   ],
-//   "url": "https://rickandmortyapi.com/api/character/8",
-//   "created": "2017-11-04T20:03:34.737Z"
-// },      
-// {
-//   "id": 7,
-//   "name": "Abradolf Lincler",
-//   "status": "unknown",
-//   "species": "Human",
-//   "type": "Genetic experiment",
-//   "gender": "Male",
-//   "origin": {
-//       "name": "Earth (Replacement Dimension)",
-//       "url": "https://rickandmortyapi.com/api/location/20"
-//   },
-//   "location": {
-//       "name": "Testicle Monster Dimension",
-//       "url": "https://rickandmortyapi.com/api/location/21"
-//   },
-//   "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/7.jpeg",
-//   "episode": [
-//       "https://rickandmortyapi.com/api/episode/10",
-//       "https://rickandmortyapi.com/api/episode/11"
-//   ],
-//   "url": "https://rickandmortyapi.com/api/character/7",
-//   "created": "2017-11-04T19:59:20.523Z"
-// }];
+const myData = data.results;
 
-// let result = [{
-//   "id": 8,
-//   "name": "Adjudicator Rick",
-//   "status": "Dead",
-//   "species": "Human",
-//   "type": "",
-//   "gender": "Male",
-//   "origin": {
-//       "name": "unknown",
-//       "url": ""
-//   },
-//   "location": {
-//       "name": "Citadel of Ricks",
-//       "url": "https://rickandmortyapi.com/api/location/3"
-//   },
-//   "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/8.jpeg",
-//   "episode": [
-//       "https://rickandmortyapi.com/api/episode/28"
-//   ],
-//   "url": "https://rickandmortyapi.com/api/character/8",
-//   "created": "2017-11-04T20:03:34.737Z"
-// }];
+let saveData = [   
+  {  
+    "name": "Rick Sanchez",
+    "status": "Alive",
+    "species": "Human",
+    "origin": {
+        "name": "Earth (C-137)",
+    },
+    "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg"
+},
+    {
+    "name": "Morty Smith",
+    "status": "Alive",
+    "species": "Human",
+    "origin": {
+        "name": "Earth (C-137)",
+    },
+    "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg"
+},
+{
+    "name": "Summer Smith",
+    "status": "Alive",
+    "species": "Human",
+    "origin": {
+        "name": "Earth (Replacement Dimension)",
+    },
+    "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg"
+  }
+];
+
 
 describe('Tests for the file data.js', () => {
 
@@ -102,14 +63,72 @@ describe('Tests for the file data.js', () => {
 describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters', ()=> {
-    let result =  `<div class="firstDiv">
-    <img src="${character.image}" class="imgCharacter"></img>
-        <div class="divElement">
-            <p class="characterName">${character.name}</p>
-            <p class="characterStatus">${character.status}</p>
-            <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
+    const originSelected = 'Earth (C-137)'; 
+    orSelectFunc(myData, originSelected);
+    expect(typeof orSelectFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const speciesSelected = 'Human'; 
+    spSelectFunc(myData, speciesSelected);
+    expect(typeof spSelectFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const statusSelected = 'Alive'; 
+    stSelectFunc(myData, statusSelected);
+    expect(typeof stSelectFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const sortSelected = 'sortA'; 
+    soSelecFunc(myData, sortSelected);
+    expect(typeof soSelecFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const sortSelected = 'sortD'; 
+    soSelecFunc(myData, sortSelected);
+    expect(typeof soSelecFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    let result = `
+    <div>
+    <img src="${myData.image}"</img>
+        <div>
+            <p ${myData.name}</p>
+            <p ${myData.status}</p>
         </div>
-    </div>`
+    </div>
+    `
+    showChar(myData);
+    expect(typeof showChar).toBe("function");
     expect(showChar).toContain(result);
-    });
+  });
+});
+
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const searchString = 'rick'; 
+    textBarFunc(saveData, searchString);
+    expect(typeof textBarFunc).toBe("function");
+  });
 });
