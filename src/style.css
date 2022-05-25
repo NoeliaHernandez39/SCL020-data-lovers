@@ -111,13 +111,6 @@ main {
     padding-left: 10px;
 }
 
-
-
-
-
-
-
-
 @media screen and (min-width: 1280px){
     #everyOption {
         margin: 30px 10px;
@@ -126,9 +119,12 @@ main {
     #selected-options {
         margin-right: 2px;
     }
-    
+    #selected-options select {
+        font-size: 16px;
+    }
     #textBar {
         margin-right: 19px;
+        font-size: 16px;
     }
 
     .firstDiv {  
@@ -150,12 +146,11 @@ main {
     }
 }
 
-@media screen and (min-width: 1920px){
+@media screen and (min-width: 1360px){
     #everyOption {
-        margin: 30px 136px;
+        margin: 30px 50px;    
     }
-
     #selected-options {
-        margin-left: 1px;
+        margin-left: 5px;
     }
 }
