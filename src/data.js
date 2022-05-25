@@ -15,7 +15,6 @@ export const origins = myData => {
     const allOrigin = myData.map(element => element.origin.name);
     //eslint-disable-next-line
     const everyOrigin = Array.from(new Set(allOrigin));
-    console.log(everyOrigin)
     return everyOrigin;
 }
 

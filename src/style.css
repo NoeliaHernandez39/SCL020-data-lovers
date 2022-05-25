@@ -118,18 +118,17 @@ main {
 
 
 
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 1280px){
     #everyOption {
-        margin: 30px 100px;
+        margin: 30px 10px;
     }
 
     #selected-options {
-        margin-left: 2px;
+        margin-right: 2px;
     }
     
-    
     #textBar {
-        margin-right: 4px;
+        margin-right: 19px;
     }
 
     .firstDiv {  
