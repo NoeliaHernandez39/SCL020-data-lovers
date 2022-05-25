@@ -1,4 +1,4 @@
-//filtra personajes por barra de busqueda
+//if filter is true it puts the item back in the array??
 export const textBarFunc = (myData, searchString) => {
         const filteredCharaters = myData.filter(character => {
         return (
@@ -10,7 +10,7 @@ export const textBarFunc = (myData, searchString) => {
 
 
 
-// muestra opciones de filtrado
+//Create a new array with no repeated elements
 export const origins = myData => {
     const allOrigin = myData.map(element => element.origin.name);
     //eslint-disable-next-line
@@ -83,8 +83,8 @@ export const soSelecFunc = (myData, sortSelected) => {
     }
 }
 
-export const showChar = characters => {
-    const showFilterChar = characters.map((character) => {
+export const showChar = myData => {
+    const showFilterChar = myData.map((character) => {
         return `
         <div class="firstDiv">
         <img src="${character.image}" class="imgCharacter"></img>

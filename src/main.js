@@ -4,7 +4,7 @@ const myData = data.results;
 orSelectFunc(myData);
 stSelectFunc(myData);
 spSelectFunc(myData);
-textBarFunc(myData);
+textBarFunc(myData); ////We call it at the bottom
 soSelecFunc(myData);
 
 let main = document.querySelector('main');
@@ -38,6 +38,8 @@ export const showNames = (item) => {
 }
 showNames(myData);
 
+////WHY IS IT EXPORTED????????????
+//Modify the DOM and display the options
 let optionOrigin = origins(myData);
 export const showOptionOrigins = () => {
     for(let i = 0; i < optionOrigin.length; i++){
@@ -49,7 +51,6 @@ export const showOptionOrigins = () => {
 }
 showOptionOrigins();
 
-//imprime las opciones
 let optionSpecies = species(myData);
 const showOptionSpecies = () => {
     for(let i = 0; i < optionSpecies.length; i++){
@@ -78,6 +79,9 @@ let selectOrigin = document.getElementById('origin-select');
     let originSelected = selectOrigin.value;
     let orResults = orSelectFunc(myData, originSelected);
     main.innerHTML = orResults;
+    if(originSelected === 'origin'){
+        return showNames(myData);
+    }
 });
 
 let selectSpecies = document.getElementById('species-select');
@@ -107,7 +111,7 @@ selectSort.addEventListener ('change', () => {
     main.innerHTML = soResults;
 });
 
-//textbar (main)
+//search for characters when a key is released
 const textBar = document.getElementById('textBar');
 textBar.addEventListener('keyup', () => {
     const searchString = textBar.value.toLowerCase();
