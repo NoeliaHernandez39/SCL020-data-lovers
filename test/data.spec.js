@@ -1,9 +1,38 @@
-import { it } from 'eslint/lib/rule-tester/rule-tester';
-import {origins,
-        species,
-        status,
-        textBarFunc
-} from '../src/data.js';
+import data from '../src/data/rickandmorty/rickandmorty';
+import {origins, species, status, orSelectFunc, spSelectFunc, stSelectFunc, soSelecFunc, showChar, textBarFunc} from '../src/data.js';
+
+const myData = data.results;
+
+let saveData = [   
+  {  
+    "name": "Rick Sanchez",
+    "status": "Alive",
+    "species": "Human",
+    "origin": {
+        "name": "Earth (C-137)",
+    },
+    "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg"
+},
+    {
+    "name": "Morty Smith",
+    "status": "Alive",
+    "species": "Human",
+    "origin": {
+        "name": "Earth (C-137)",
+    },
+    "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg"
+},
+{
+    "name": "Summer Smith",
+    "status": "Alive",
+    "species": "Human",
+    "origin": {
+        "name": "Earth (Replacement Dimension)",
+    },
+    "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg"
+  }
+];
+
 
 describe('Tests for the file data.js', () => {
 
@@ -31,57 +60,72 @@ describe('Tests for the file data.js', () => {
 
 describe('Tests for the file data.js', () => {
   it('has to return filtered characters', ()=> {
-    let character = [{"name": "Rick", "status": "Alive", "species": "Human", "origin": {"name": "Earth"}, "image": "/images/1.jpeg"},
-    {"name": "Morty", "status": "Alive", "species": "Human", "origin": {"name": "Earth"}, "image": "/images/2.jpeg"},
-    {"name": "Summer", "status": "Alive", "species": "Human", "origin": {"name": "Earth"}, "image": "/images/3.jpeg"}];
-    let searchString = `
-    <div class="firstDiv">
-    <img src="${character.image}" class="imgCharacter"></img>
-        <div class="divElement">
-            <p class="characterName">${character.name}</p>
-            <p class="characterStatus">${character.status}</p>
+    const originSelected = 'Earth (C-137)'; 
+    orSelectFunc(myData, originSelected);
+    expect(typeof orSelectFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const speciesSelected = 'Human'; 
+    spSelectFunc(myData, speciesSelected);
+    expect(typeof spSelectFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const statusSelected = 'Alive'; 
+    stSelectFunc(myData, statusSelected);
+    expect(typeof stSelectFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const sortSelected = 'sortA'; 
+    soSelecFunc(myData, sortSelected);
+    expect(typeof soSelecFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    const sortSelected = 'sortD'; 
+    soSelecFunc(myData, sortSelected);
+    expect(typeof soSelecFunc).toBe("function");
+  });
+});
+
+describe('Tests for the file data.js', () => {
+
+  it('has to return filtered characters', ()=> {
+    let result = `
+    <div>
+    <img src="${myData.image}"</img>
+        <div>
+            <p ${myData.name}</p>
+            <p ${myData.status}</p>
         </div>
     </div>
-    `;
-    let textBarFunc1 = textBarFunc(character);
-    expect(textBarFunc1).toEqual(searchString);
-    });
+    `
+    showChar(myData);
+    expect(typeof showChar).toBe("function");
+    expect(showChar).toContain(result);
+  });
 });
 
 
+describe('Tests for the file data.js', () => {
 
-
-
-
-
-{/* <p class="characterOrigin">Origin:</br>${character.origin.name}</p> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-// describe('Tests for the file data.js', () => {
-
-//   it('has to return filtered characters', ()=> {
-//     let character = [[{'name' : 'rick'}], [{'image' : 'imagen.jpg'}], [{'status' : 'alive'}], [{'origin' : [{'name' : 'earth'}]}]];
-//     let result =  `<div class="firstDiv">
-//     <img src="${character.image}" class="imgCharacter"></img>
-//         <div class="divElement">
-//             <p class="characterName">${character.name}</p>
-//             <p class="characterStatus">${character.status}</p>
-//             <p class="characterOrigin">Origin:</br>${character.origin}</p>
-//         </div>
-//     </div>`
-//     let result1 = result.join('');
-//     let showChar1 = showChar(character);
-//     expect(showChar1).toContain(result1);
-//     });
-// });
+  it('has to return filtered characters', ()=> {
+    const searchString = 'rick'; 
+    textBarFunc(saveData, searchString);
+    expect(typeof textBarFunc).toBe("function");
+  });
+});
