@@ -1,115 +1,87 @@
 import { it } from 'eslint/lib/rule-tester/rule-tester';
 import {origins,
         species,
-        status
+        status,
+        textBarFunc
 } from '../src/data.js';
-
-// let myData = [      {
-//   "id": 8,
-//   "name": "Adjudicator Rick",
-//   "status": "Dead",
-//   "species": "Human",
-//   "type": "",
-//   "gender": "Male",
-//   "origin": {
-//       "name": "unknown",
-//       "url": ""
-//   },
-//   "location": {
-//       "name": "Citadel of Ricks",
-//       "url": "https://rickandmortyapi.com/api/location/3"
-//   },
-//   "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/8.jpeg",
-//   "episode": [
-//       "https://rickandmortyapi.com/api/episode/28"
-//   ],
-//   "url": "https://rickandmortyapi.com/api/character/8",
-//   "created": "2017-11-04T20:03:34.737Z"
-// },      
-// {
-//   "id": 7,
-//   "name": "Abradolf Lincler",
-//   "status": "unknown",
-//   "species": "Human",
-//   "type": "Genetic experiment",
-//   "gender": "Male",
-//   "origin": {
-//       "name": "Earth (Replacement Dimension)",
-//       "url": "https://rickandmortyapi.com/api/location/20"
-//   },
-//   "location": {
-//       "name": "Testicle Monster Dimension",
-//       "url": "https://rickandmortyapi.com/api/location/21"
-//   },
-//   "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/7.jpeg",
-//   "episode": [
-//       "https://rickandmortyapi.com/api/episode/10",
-//       "https://rickandmortyapi.com/api/episode/11"
-//   ],
-//   "url": "https://rickandmortyapi.com/api/character/7",
-//   "created": "2017-11-04T19:59:20.523Z"
-// }];
-
-// let result = [{
-//   "id": 8,
-//   "name": "Adjudicator Rick",
-//   "status": "Dead",
-//   "species": "Human",
-//   "type": "",
-//   "gender": "Male",
-//   "origin": {
-//       "name": "unknown",
-//       "url": ""
-//   },
-//   "location": {
-//       "name": "Citadel of Ricks",
-//       "url": "https://rickandmortyapi.com/api/location/3"
-//   },
-//   "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/8.jpeg",
-//   "episode": [
-//       "https://rickandmortyapi.com/api/episode/28"
-//   ],
-//   "url": "https://rickandmortyapi.com/api/character/8",
-//   "created": "2017-11-04T20:03:34.737Z"
-// }];
 
 describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters by their origin', ()=>{
-    const originChar = [{'origin': 'Earth'}, {'origin': 'Mars'}];
-    const result = originChar.origin;
-    const originFunc = origins(originChar);
-    expect(originFunc).toContain(result);
+    const char = [{"origin": {"name": "Earth"}}, {"origin": {"name": "Earth"}}, {"origin": {"name": "Mars"}}];
+    const result = ['Earth', 'Mars'];
+    const originFunc = origins(char);
+    expect(originFunc).toEqual(result);
     });
 
   it('has to return filtered character by their species', ()=>{
-    const speciesChar = [[{'specie': 'Human'}], [{'specie': 'Alien'}]];
-    const result = speciesChar.specie;
+    const speciesChar = [{'species': 'Human'}, {'species': 'Human'}, {'species': 'Alien'}];
+    const result = ['Human', 'Alien'];
     const speciesFunc = species(speciesChar);
-    expect(speciesFunc).toContain(result);
+    expect(speciesFunc).toEqual(result);
   });
 
   it('has to return filtered characters by their status', ()=>{
-    const statusChar = [[{'status': 'a'}], [{'status': 'b'}]]
-    const result = statusChar.status;
+    const statusChar = [{'status': 'Alive'}, {'status': 'Alive'}, {'status': 'Dead'}];
+    const result = ['Alive', 'Dead'];
     const statusFunc = status(statusChar);
-    expect(statusFunc).toContain(result);
+    expect(statusFunc).toEqual(result);
   });
-
-  
 });
 
 describe('Tests for the file data.js', () => {
-
   it('has to return filtered characters', ()=> {
-    let result =  `<div class="firstDiv">
+    let character = [{"name": "Rick", "status": "Alive", "species": "Human", "origin": {"name": "Earth"}, "image": "/images/1.jpeg"},
+    {"name": "Morty", "status": "Alive", "species": "Human", "origin": {"name": "Earth"}, "image": "/images/2.jpeg"},
+    {"name": "Summer", "status": "Alive", "species": "Human", "origin": {"name": "Earth"}, "image": "/images/3.jpeg"}];
+    let searchString = `
+    <div class="firstDiv">
     <img src="${character.image}" class="imgCharacter"></img>
         <div class="divElement">
             <p class="characterName">${character.name}</p>
             <p class="characterStatus">${character.status}</p>
-            <p class="characterOrigin">Origin:</br>${character.origin.name}</p>
         </div>
-    </div>`
-    expect(showChar).toContain(result);
+    </div>
+    `;
+    let textBarFunc1 = textBarFunc(character);
+    expect(textBarFunc1).toEqual(searchString);
     });
 });
+
+
+
+
+
+
+
+{/* <p class="characterOrigin">Origin:</br>${character.origin.name}</p> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// describe('Tests for the file data.js', () => {
+
+//   it('has to return filtered characters', ()=> {
+//     let character = [[{'name' : 'rick'}], [{'image' : 'imagen.jpg'}], [{'status' : 'alive'}], [{'origin' : [{'name' : 'earth'}]}]];
+//     let result =  `<div class="firstDiv">
+//     <img src="${character.image}" class="imgCharacter"></img>
+//         <div class="divElement">
+//             <p class="characterName">${character.name}</p>
+//             <p class="characterStatus">${character.status}</p>
+//             <p class="characterOrigin">Origin:</br>${character.origin}</p>
+//         </div>
+//     </div>`
+//     let result1 = result.join('');
+//     let showChar1 = showChar(character);
+//     expect(showChar1).toContain(result1);
+//     });
+// });

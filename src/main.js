@@ -8,7 +8,6 @@ textBarFunc(myData);
 soSelecFunc(myData);
 
 let main = document.querySelector('main');
-
 main.innerHTML = showChar(myData);
 
 export const showNames = (item) => {
@@ -38,8 +37,6 @@ export const showNames = (item) => {
     }
 }
 showNames(myData);
-
-
 
 let optionOrigin = origins(myData);
 export const showOptionOrigins = () => {
@@ -75,9 +72,7 @@ const showOptionStatus = () => {
 }
 showOptionStatus();
 
-
 // muestra personajes filtrados (main)
-
 let selectOrigin = document.getElementById('origin-select');
     selectOrigin.addEventListener('change', () => {
     let originSelected = selectOrigin.value;
@@ -112,13 +107,10 @@ selectSort.addEventListener ('change', () => {
     main.innerHTML = soResults;
 });
 
-
 //textbar (main)
-
 const textBar = document.getElementById('textBar');
 textBar.addEventListener('keyup', () => {
     const searchString = textBar.value.toLowerCase();
     let textBarResults = textBarFunc(myData, searchString);
     main.innerHTML = textBarResults;
 });
-

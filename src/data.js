@@ -8,14 +8,12 @@ export const textBarFunc = (myData, searchString) => {
     return showChar(filteredCharaters);
 }
 
-
-
-
 // muestra opciones de filtrado
 export const origins = myData => {
     const allOrigin = myData.map(element => element.origin.name);
     //eslint-disable-next-line
     const everyOrigin = Array.from(new Set(allOrigin));
+    console.log(everyOrigin)
     return everyOrigin;
 }
 
@@ -27,7 +25,6 @@ export const species = myData => {
     
 }
 
-
 export const status = myData => {
     const allStatus = myData.map(element => element.status);
     //eslint-disable-next-line
@@ -36,8 +33,6 @@ export const status = myData => {
 }
 
 // muestra personajes filtrados (data)
-
-
 export const orSelectFunc = (myData, originSelected) => {
         const filteredOriginCharaters = myData.filter((character) => {
             return (
@@ -65,7 +60,6 @@ export const stSelectFunc = (myData, statusSelected) => {
         });
         return showChar(filteredStatusCharaters);
 }
-
 
 export const soSelecFunc = (myData, sortSelected) => {
         let arr= [...myData]
@@ -103,6 +97,3 @@ export const showChar = characters => {
     });
     return showFilterChar.join('');
 }
-
-
-
