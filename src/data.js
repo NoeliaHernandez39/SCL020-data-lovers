@@ -11,7 +11,7 @@ export const textBarFunc = (myData, searchString) => {
 
 
 //Create a new array with no repeated elements
-export const origins = myData => {
+export const origin = myData => {
     const allOrigin = myData.map(element => element.origin.name);
     //eslint-disable-next-line
     const everyOrigin = Array.from(new Set(allOrigin));

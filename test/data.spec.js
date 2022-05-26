@@ -1,5 +1,5 @@
 import data from '../src/data/rickandmorty/rickandmorty';
-import {origins, species, status, orSelectFunc, spSelectFunc, stSelectFunc, soSelecFunc, showChar, textBarFunc} from '../src/data.js';
+import {origin, species, status, orSelectFunc, spSelectFunc, stSelectFunc, soSelecFunc, showChar, textBarFunc} from '../src/data.js';
 
 const myData = data.results;
 
@@ -39,7 +39,7 @@ describe('Tests for the file data.js', () => {
   it('has to return filtered characters by their origin', ()=>{
     const char = [{"origin": {"name": "Earth"}}, {"origin": {"name": "Earth"}}, {"origin": {"name": "Mars"}}];
     const result = ['Earth', 'Mars'];
-    const originFunc = origins(char);
+    const originFunc = origin(char);
     expect(originFunc).toEqual(result);
     });
 

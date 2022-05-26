@@ -1,5 +1,5 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {textBarFunc, origins, species, status, orSelectFunc , stSelectFunc, spSelectFunc, soSelecFunc, showChar} from './data.js';
+import {textBarFunc, origin, species, status, orSelectFunc , stSelectFunc, spSelectFunc, soSelecFunc, showChar} from './data.js';
 const myData = data.results;
 orSelectFunc(myData);
 stSelectFunc(myData);
@@ -40,8 +40,8 @@ showNames(myData);
 
 ////WHY IS IT EXPORTED????????????
 //Modify the DOM and display the options
-let optionOrigin = origins(myData);
-export const showOptionOrigins = () => {
+let optionOrigin = origin(myData);
+export const showOptionOrigin = () => {
     for(let i = 0; i < optionOrigin.length; i++){
         let selectOrigin = document.getElementById('origin-select');
         let selectOptionOrigin = document.createElement('option');
@@ -49,7 +49,7 @@ export const showOptionOrigins = () => {
         selectOptionOrigin.innerHTML = optionOrigin[i];
     }
 }
-showOptionOrigins();
+showOptionOrigin();
 
 let optionSpecies = species(myData);
 const showOptionSpecies = () => {
