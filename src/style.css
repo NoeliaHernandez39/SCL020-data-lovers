@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
 
 body{
     background: black;
@@ -13,11 +14,70 @@ body{
     width: 53%;
 }
 
+.intro p {
+    font-family: 'Lacquer', cursive;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: 800px;
+    text-justify: auto;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+}
+.btnrick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rick{
+    width: 450px;
+}
+
+.divbtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn{
+    background-color: rgba(186, 227, 17, 1);
+    color: black;
+    font-family: 'Lacquer', cursive;
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    margin: 20px;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 10px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+section{
+    margin-top: 50px;
+}
+
 #everyOption {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin: 30px 10px;
+    margin: 50px 10px;
+    padding-top: 30px;
 }
 
 
