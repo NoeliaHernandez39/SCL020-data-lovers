@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
 
 body{
     background: rgba(34, 34, 34, 1);
@@ -13,6 +14,46 @@ body{
 
 .logoRickyMorty img {
     width: 53%;
+}
+
+.intro p {
+    font-family: 'Lacquer', cursive;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: 800px;
+    text-justify: auto;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+}
+.btnrick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rick{
+    width: 450px;
+}
+
+.divbtn{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    background-color: rgba(186, 227, 17, 1);
+    font-family: 'Lacquer', cursive;
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    margin: 20px;
+
+    border-radius: 10px;
+    border: none;
 }
 
 #everyOption {
