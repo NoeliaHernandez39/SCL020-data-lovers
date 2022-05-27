@@ -39,7 +39,7 @@ Este es nuesto prototipo de media. Todavia resolviendo unos detalles de la prime
 
 Este es nuesto prototipo de Alta. Ya con la pantalla de bienvenida modificada.
 ![json-interfaz](imgReadme/protAlta.png)
-![json-interfaz](imgReadme/protAlta2.png)
+![json-interfaz](imgReadme/protoalta.png)
 ## 3. Nuestra Planning
 Basamos nuestra planificacion en las historias de usuario que sacamos de nuestra encuesta. Fuimos desglozando de a poco los criterios de aceptacion y las definiciones de terminado. 
 
