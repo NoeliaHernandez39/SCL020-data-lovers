@@ -11,42 +11,44 @@
         <img src='img/Rick_and_Morty.png' alt='Logo Rick_and_Morty'>
 	</div>
 	<div class="intro">
-		<p>Rick y Morty es una *burrp* comedia de ciencia ficción animada para <br> *burrp* adultos creada por... ¡me importa un carajo!...
-		<br> ¡¡Me converti en un pepinillo morty!! 
-		<br> arrastrame por esta pagina y conoce a todos los personajes que han estado en nuestra serieeee.. 
+		<p>Rick and Morty is *burrp* an animated sci-fi comedy for <br> *burrp* adults created for... I don't give a shit!...
+		<br> I became a pickle Morty!! 
+		<br>meet all the characters that have been in our serieeeeeees... 
 		<br> ¡wubba lubba dub duuuuuub!</p>
 	</div>
 		<div class="btnrick">
 			<div class="divbtn">
-				<button class="btn" id="btnChar">personajes</button>
-				<button class="btn">merch</button>
+				<a class="btn" id="btnChar" href="#everyOption">characters</a>
+				<a class="btn" href="https://rickandmortyshop.com/">merch</a>
 			</div>
 			<img class="rick" src="img/rick.png" alt="NO SALE LA IMAGEN">
 			<div class="divbtn">
-				<button class="btn">ver serie</button>
-				<button class="btn">juego</button>
-			</div>
-		</div>
-		<div id="everyOption">
-        <input type="text" placeholder="Search.." name="search" id="textBar">
-			<div id="selected-options">
-				<select id="origin-select" class="selectedOptions">
-					<option value="origin">Origin</option>
-				</select>
-				<select id="species-select" class="selectedOptions">
-					<option value="species">Species</option>
-				</select>
-				<select id="status-select" class="selectedOptions">
-					<option value="status">Status</option>
-				</select>
-				<select id="sort-select" class="selectedOptions">
-					<option value="sort">Sort By</option>
-					<option value="sortA" id="sortA">Ascendent</option>
-					<option value="sortD" id="sortD">Descendent</option>
-				</select>
+				<a class="btn" href="https://www.netflix.com/cl/title/80014749">series</a>
+				<a class="btn" href="https://www.adultswim.com/games/pocket-mortys">game</a>
 			</div>
 		</div>
 		</header>
+		<section>
+			<div id="everyOption">
+				<input type="text" placeholder="Search.." name="search" id="textBar">
+					<div id="selected-options">
+						<select id="origin-select" class="selectedOptions">
+							<option value="origin">Origin</option>
+						</select>
+						<select id="species-select" class="selectedOptions">
+							<option value="species">Species</option>
+						</select>
+						<select id="status-select" class="selectedOptions">
+							<option value="status">Status</option>
+						</select>
+						<select id="sort-select" class="selectedOptions">
+							<option value="sort">Sort By</option>
+							<option value="sortA" id="sortA">Ascendent</option>
+							<option value="sortD" id="sortD">Descendent</option>
+						</select>
+					</div>
+				</div>
+		</section>
 		<main>
 		</main>
 		<script src="main.js" type="module"></script>
