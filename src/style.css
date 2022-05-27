@@ -27,13 +27,13 @@ body{
     display: flex;
     justify-content: center;
 }
-.btnrick {
+#btnrick {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.rick{
+#rick{
     width: 450px;
 }
 
@@ -107,7 +107,7 @@ section{
     margin-right: 26px;
 }
 
-input#textBar {
+input#textBar{
     padding-left: 10px;
 }
 
