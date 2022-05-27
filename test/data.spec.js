@@ -1,9 +1,6 @@
-import data from '../src/data/rickandmorty/rickandmorty';
-import {origin, species, status, orSelectFunc, spSelectFunc, stSelectFunc, soSelecFunc, showChar, textBarFunc} from '../src/data.js';
+import {origin, species, status, textBarFunc, stSelectFunc, sortSelecFunc, orSelectFunc, spSelectFunc, showChar} from '../src/data.js';
 
-const myData = data.results;
-
-let saveData = [   
+let myData = [   
   {  
     "name": "Rick Sanchez",
     "status": "Alive",
@@ -41,6 +38,7 @@ describe('Tests for the file data.js', () => {
     const result = ['Earth', 'Mars'];
     const originFunc = origin(char);
     expect(originFunc).toEqual(result);
+    expect(originFunc).not.toEqual(char);
     });
 
   it('has to return filtered character by their species', ()=>{
@@ -48,6 +46,7 @@ describe('Tests for the file data.js', () => {
     const result = ['Human', 'Alien'];
     const speciesFunc = species(speciesChar);
     expect(speciesFunc).toEqual(result);
+    expect(speciesFunc).not.toEqual(speciesChar);
   });
 
   it('has to return filtered characters by their status', ()=>{
@@ -55,14 +54,23 @@ describe('Tests for the file data.js', () => {
     const result = ['Alive', 'Dead'];
     const statusFunc = status(statusChar);
     expect(statusFunc).toEqual(result);
+    expect(statusFunc).not.toEqual(statusChar);
+  });
+  
+  it('filter character by its search value', ()=> {
+    const searchString = 'rick';
+    const func = textBarFunc (myData, searchString);
+    expect(func).toContain(searchString);
+    expect(func).not.toEqual(myData);
   });
 });
 
 describe('Tests for the file data.js', () => {
   it('has to return filtered characters', ()=> {
     const originSelected = 'Earth (C-137)'; 
-    orSelectFunc(myData, originSelected);
+    const func = orSelectFunc(myData, originSelected);
     expect(typeof orSelectFunc).toBe("function");
+    expect(func).not.toEqual(myData);
   });
 });
 
@@ -70,8 +78,9 @@ describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters', ()=> {
     const speciesSelected = 'Human'; 
-    spSelectFunc(myData, speciesSelected);
+    const func = spSelectFunc(myData, speciesSelected);
     expect(typeof spSelectFunc).toBe("function");
+    expect(func).not.toEqual(myData);
   });
 });
 
@@ -79,8 +88,9 @@ describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters', ()=> {
     const statusSelected = 'Alive'; 
-    stSelectFunc(myData, statusSelected);
+    const func = stSelectFunc(myData, statusSelected);
     expect(typeof stSelectFunc).toBe("function");
+    expect(func).not.toEqual(myData);
   });
 });
 
@@ -88,8 +98,9 @@ describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters', ()=> {
     const sortSelected = 'sortA'; 
-    soSelecFunc(myData, sortSelected);
-    expect(typeof soSelecFunc).toBe("function");
+    const func = sortSelecFunc(myData, sortSelected);
+    expect(typeof sortSelecFunc).toBe("function");
+    expect(func).not.toEqual(myData);
   });
 });
 
@@ -97,26 +108,18 @@ describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters', ()=> {
     const sortSelected = 'sortD'; 
-    soSelecFunc(myData, sortSelected);
-    expect(typeof soSelecFunc).toBe("function");
+    const func = sortSelecFunc(myData, sortSelected);
+    expect(typeof sortSelecFunc).toBe("function");
+    expect(func).not.toEqual(myData);
   });
 });
 
 describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters', ()=> {
-    let result = `
-    <div>
-    <img src="${myData.image}"</img>
-        <div>
-            <p ${myData.name}</p>
-            <p ${myData.status}</p>
-        </div>
-    </div>
-    `
-    showChar(myData);
+    const func = showChar(myData);
     expect(typeof showChar).toBe("function");
-    expect(showChar).toContain(result);
+    expect(func).not.toEqual(myData);
   });
 });
 
@@ -125,7 +128,8 @@ describe('Tests for the file data.js', () => {
 
   it('has to return filtered characters', ()=> {
     const searchString = 'rick'; 
-    textBarFunc(saveData, searchString);
+    const func = textBarFunc(myData, searchString);
     expect(typeof textBarFunc).toBe("function");
+    expect(func).not.toEqual(myData);
   });
 });

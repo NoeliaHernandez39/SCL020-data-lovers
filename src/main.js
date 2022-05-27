@@ -1,11 +1,6 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {textBarFunc, origin, species, status, orSelectFunc , stSelectFunc, spSelectFunc, soSelecFunc, showChar} from './data.js';
+import {textBarFunc, origin, species, status, orSelectFunc , stSelectFunc, spSelectFunc, sortSelecFunc, showChar} from './data.js';
 const myData = data.results;
-orSelectFunc(myData);
-stSelectFunc(myData);
-spSelectFunc(myData);
-textBarFunc(myData); ////We call it at the bottom
-soSelecFunc(myData);
 
 let main = document.querySelector('main');
 main.innerHTML = showChar(myData);
@@ -38,10 +33,17 @@ export const showNames = (item) => {
 }
 showNames(myData);
 
-////WHY IS IT EXPORTED????????????
+//search for characters when a key is released
+const textBar = document.getElementById('textBar');
+textBar.addEventListener('keyup', () => {
+    const searchString = textBar.value.toLowerCase();
+    let textBarResults = textBarFunc(myData, searchString);
+    main.innerHTML = textBarResults;
+});
+
 //Modify the DOM and display the options
 let optionOrigin = origin(myData);
-export const showOptionOrigin = () => {
+const showOptionOrigin = () => {
     for(let i = 0; i < optionOrigin.length; i++){
         let selectOrigin = document.getElementById('origin-select');
         let selectOptionOrigin = document.createElement('option');
@@ -76,45 +78,37 @@ showOptionStatus();
 // muestra personajes filtrados (main)
 let selectOrigin = document.getElementById('origin-select');
     selectOrigin.addEventListener('change', () => {
-    let originSelected = selectOrigin.value;
-    let orResults = orSelectFunc(myData, originSelected);
+    let originValue = selectOrigin.value;
+    let orResults = orSelectFunc(myData, originValue);
     main.innerHTML = orResults;
-    if(originSelected === 'origin'){
+    if(originValue === 'origin'){
         return showNames(myData);
     }
 });
 
 let selectSpecies = document.getElementById('species-select');
 selectSpecies.addEventListener('change', () => {
-    let speciesSelected = selectSpecies.value;
-    let spResults = spSelectFunc(myData, speciesSelected);
+    let speciesValue = selectSpecies.value;
+    let spResults = spSelectFunc(myData, speciesValue);
     main.innerHTML = spResults;
-    if(speciesSelected === 'species'){
+    if(speciesValue === 'species'){
         return showNames(myData);
     }
 });
 
 let selectStatus = document.getElementById('status-select');
 selectStatus.addEventListener('change', () => {
-    let statusSelected = selectStatus.value;
-    let stResults = stSelectFunc(myData, statusSelected);
+    let statusValue = selectStatus.value;
+    let stResults = stSelectFunc(myData, statusValue);
     main.innerHTML = stResults;
-    if(statusSelected === 'status'){
+    if(statusValue === 'status'){
         return showNames(myData);
     }
 });
 
 const selectSort = document.getElementById('sort-select');
 selectSort.addEventListener ('change', () => {
-    let sortSelected = selectSort.value;
-    let soResults = soSelecFunc(myData, sortSelected);
+    let sortValue = selectSort.value;
+    let soResults = sortSelecFunc(myData, sortValue);
     main.innerHTML = soResults;
-});
-
-//search for characters when a key is released
-const textBar = document.getElementById('textBar');
-textBar.addEventListener('keyup', () => {
-    const searchString = textBar.value.toLowerCase();
-    let textBarResults = textBarFunc(myData, searchString);
-    main.innerHTML = textBarResults;
 });
