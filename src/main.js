@@ -74,8 +74,6 @@ const showOptionStatus = () => {
     }
 }
 showOptionStatus();
-<<<<<<< HEAD
-=======
 
 // muestra personajes filtrados (main)
 let selectOrigin = document.getElementById('origin-select');
@@ -114,4 +112,3 @@ selectSort.addEventListener ('change', () => {
     let soResults = sortSelecFunc(myData, sortValue);
     main.innerHTML = soResults;
 });
->>>>>>> bce09ea4f2322299a34160ae1e754a8acbcb9dc4
