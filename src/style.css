@@ -112,7 +112,7 @@ main {
 }
 
 @media screen and (min-width: 1280px){
-    Body {
+    body {
         background: rgba(34, 34, 34, 1);
     }
     #everyOption {
